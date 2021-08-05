@@ -1,23 +1,23 @@
 import React from "react";
 import { Accordion, Container, ListGroup } from "react-bootstrap";
 
-interface IClients {
+type client = {
   name: string;
   birth: string;
   email: string;
   value: number;
-}
+};
 
 interface IOperators {
   name: string;
-  clients: IClients[];
+  clients: client[];
 }
 
-interface Props {
+interface MainProps {
   operators: IOperators[];
 }
 
-const Main: React.FC<Props> = ({ operators }) => {
+const Main: React.FC<MainProps> = ({ operators }) => {
   return (
     <Container className="mt-3">
       {operators.map((operator) => (
